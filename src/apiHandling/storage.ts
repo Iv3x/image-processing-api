@@ -1,21 +1,21 @@
-import { existsSync } from 'fs'
-import { type NextFunction, type Request, type Response } from 'express'
-import * as paths from '../paths'
+import { existsSync } from 'fs';
+import express from 'express';
+import * as paths from '../paths';
 
 class Storage {
-  storeFile (req: Request, res: Response, next: NextFunction): void {
-    const { filename, width, height } = req.query
-    const w = Number(width)
-    const h = Number(height)
-    const imageName = (filename as string) + `_${w}_${h}.jpg`
-    const storagePath = paths.storage + '/' + imageName
+  storeFile(req: express.Request, res: express.Response, next: express.NextFunction): void {
+    const { filename, width, height } = req.query;
+    const w: number = Number(width);
+    const h: number = Number(height);
+    const imageName: string = (filename as string) + `_${w}_${h}.jpg`;
+    const storagePath: string = paths.storage + '/' + imageName;
     if (!existsSync(storagePath)) {
-      next()
+      next();
     } else {
-      res.status(304).sendFile(storagePath)
+      res.status(304).sendFile(storagePath);
     }
   }
 }
 
-const storage = new Storage()
-export default storage
+const storage = new Storage();
+export default storage;

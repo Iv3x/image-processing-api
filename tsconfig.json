@@ -6,13 +6,11 @@
     "lib": ["ES2023", "DOM"],
     "rootDir": "src",
     "outDir": "dist",
-
     "strict": true,
     "alwaysStrict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -20,16 +18,14 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
     "declaration": true,
-
     "pretty": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["typings/**/*", "src/**/*"]
+  "include": ["src/**/*.ts"]
 }

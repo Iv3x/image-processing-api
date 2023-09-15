@@ -6,11 +6,11 @@ const port: number = 3000;
 
 app.use(router);
 
-app.listen(port, () => {
+app.listen(port, (): void => {
   console.log(`server URL: http://localhost:${port}`);
 });
 
-app.use((_req: Request, res: Response) => {
+app.use((_req: Request, res: Response): void => {
   res.status(404).send('Route not found');
 });
 
